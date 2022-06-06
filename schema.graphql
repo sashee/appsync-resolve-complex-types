@@ -9,6 +9,7 @@ type Group {
 }
 
 type Query {
+	allGroups: [Group!]!
 	user(id: ID!): User
 	group(id: ID!): Group
 }

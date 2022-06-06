@@ -114,6 +114,13 @@ resource "aws_appsync_datasource" "lambda" {
 }
 
 # resolvers
+resource "aws_appsync_resolver" "Query_allGroups" {
+  api_id      = aws_appsync_graphql_api.appsync.id
+  type        = "Query"
+  field       = "allGroups"
+  data_source = aws_appsync_datasource.lambda.name
+}
+
 resource "aws_appsync_resolver" "Query_group" {
   api_id      = aws_appsync_graphql_api.appsync.id
   type        = "Query"
